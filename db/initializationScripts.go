@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS employee(
 	birthday NUMERIC NOT NULL, 
 	photo TEXT NOT NULL,
 	address TEXT NOT NULL,
-	phone TEXT NOT NULL UNIQUE,
+	phone TEXT NOT NULL,
 	email TEXT NOT NULL UNIQUE,
 	comment TEXT,
 	date_hire NUMERIC NOT NULL,

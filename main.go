@@ -59,6 +59,7 @@ func tests() {
 	employee1.Position.Id = 1
 	employee1.DateHire = "2019-02-03"
 	employee1.Phone = GetRandomString()
+	employee1.Comment = "Comment_" + GetRandomString()
 	employee1.Birthday = "2019-02-02"
 	employee1.Gender = true
 	employee1.Fio = GetRandomString()
@@ -82,6 +83,7 @@ func tests() {
 	params := make(map[string]string)
 	params["fio"] = "UpdateUser_" + GetRandomString()
 	params["gender"] = "false"
+	params[models.CommentField] = "New_Update_Comment" + GetRandomString()
 	err = models.UpdateEmployee(db.Connection, employee2.Id, params)
 	if err != nil {
 		log.Printf("Update Employee error:\n%s\n", err)
