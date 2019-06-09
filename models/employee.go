@@ -5,6 +5,20 @@ import (
 	"fmt"
 )
 
+const (
+	FioField          = "fio"
+	GenderField       = "gender"
+	BirthdayField     = "birthday"
+	PhotoField        = "photo"
+	AddressField      = "address"
+	PhoneField        = "phone"
+	EmailField        = "email"
+	CommentField      = "comment"
+	DateHireField     = "date_hire"
+	IdDepartmentField = "id_department"
+	IdPositionField   = "id_position"
+)
+
 type Employee struct {
 	Id         int64      `json:"id"`
 	Fio        string     `json:"fio"`
