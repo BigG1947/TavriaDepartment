@@ -35,7 +35,7 @@ type Employee struct {
 }
 
 func GetAllEmployeeFromDepartment(db *sql.DB, idDepartment int64) ([]Employee, error) {
-	rows, err := db.Query("SELECT e.id, e.fio, e.gender, e.birthday, e.photo, e.address, e.phone, e.email, e.comment, e.date_hire, d.id, d.address, p.id, p.name FROM employee e INNER JOIN department d on e.id_department = d.id INNER JOIN position p on e.id_position = p.id ORDER BY e.fio")
+	rows, err := db.Query("SELECT e.id, e.fio, e.gender, e.birthday, e.photo, e.address, e.phone, e.email, e.comment, e.date_hire, d.id, d.address, p.id, p.name FROM employee e INNER JOIN department d on e.id_department = d.id INNER JOIN position p on e.id_position = p.id WHERE e.id_department = ? ORDER BY e.fio", idDepartment)
 	if err != nil {
 		return []Employee{}, err
 	}
